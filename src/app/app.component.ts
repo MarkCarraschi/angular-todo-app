@@ -6,4 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  public todos: any[] = []; //Empty array list
+
+  constructor() {
+    this.todos.push('Task 01'); //class scope
+    this.todos.push('Task 02');
+    this.todos.push('Task 03');
+    this.todos.push({ message: 'teste' });
+    this.todos.push(new Date());
+  }
 }
