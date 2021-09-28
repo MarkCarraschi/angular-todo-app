@@ -1,5 +1,10 @@
 <h1>{{title}}</h1>
 <button (click)="changeText()">Change</button>
 <ul>
-  <li ngFor="let todo of todos">{{todos}}</li>
+  <li *ngFor="let todo of todos">
+    {{todo.id}} {{todo.title}}
+    <button *ngIf="!todo.done">Finish</button>
+    <button *ngIf="todo.done">Repeat</button>
+    <button (click)="remove(todo)">Remove</button>
+  </li>
 </ul>
