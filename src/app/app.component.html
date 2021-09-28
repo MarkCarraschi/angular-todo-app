@@ -1,6 +1,9 @@
 <h1>{{title}}</h1>
 <button (click)="changeText()">Change</button>
 <ul>
+  <p>
+    <small *ngIf="todos.length == 0">No tasks today </small>
+  </p>
   <li *ngFor="let todo of todos">
     {{todo.id}} {{todo.title}}
     <button *ngIf="!todo.done" (click)="markAsDone(todo)">Finish</button>
@@ -16,7 +19,7 @@
     <label>Task: </label>
     <input type="text" placeholder="Title of task" maxlength="60" formControlName="title">
     <small *ngIf="form.controls.title.invalid && !form.controls.title.pristine">Range of the field (3 to 60)</small>
-    <button [disabled]="form.invalid">Save</button>
+    <button [disabled]="form.invalid" (click)="add()">Save</button>
 
   </fieldset>
 
