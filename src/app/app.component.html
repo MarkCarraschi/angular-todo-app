@@ -8,3 +8,16 @@
     <button (click)="remove(todo)">Remove</button>
   </li>
 </ul>
+
+<form [formGroup]="form">
+
+  <fieldset>
+
+    <label>Task: </label>
+    <input type="text" placeholder="Title of task" maxlength="60" formControlName="title">
+    <small *ngIf="form.controls.title.invalid && !form.controls.title.pristine">Range of the field (3 to 60)</small>
+    <button [disabled]="form.invalid">Save</button>
+
+  </fieldset>
+
+</form>
