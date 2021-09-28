@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   public todos: any[] = []; //Empty array list
+  public title: String = 'My tasks';
 
   constructor() {
     this.todos.push('Task 01'); //class scope
@@ -15,5 +16,9 @@ export class AppComponent {
     this.todos.push('Task 03');
     this.todos.push({ message: 'teste' });
     this.todos.push(new Date());
+  }
+
+  changeText() {
+    this.title = 'Test';
   }
 }
