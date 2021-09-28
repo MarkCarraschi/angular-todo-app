@@ -12,9 +12,9 @@ export class AppComponent {
   public title: String = 'My tasks';
 
   constructor() {
-    this.todos.push(new Todo(1, 'Task01', false));
-    this.todos.push(new Todo(2, 'Task02', false));
-    this.todos.push(new Todo(3, 'Task03', true));
+    this.todos.push(new Todo(1, 'Task 01', false));
+    this.todos.push(new Todo(2, 'Task 02', false));
+    this.todos.push(new Todo(3, 'Task 03', true));
   }
 
   changeText() {
@@ -28,11 +28,11 @@ export class AppComponent {
     }
   }
 
-  markAsDone() {
-
+  markAsDone(todo: Todo) {
+    todo.done = true;
   }
 
-  maskAsUndone() {
-
+  markAsUndone(todo: Todo) {
+    todo.done = false;
   }
 }
