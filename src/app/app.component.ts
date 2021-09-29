@@ -9,6 +9,7 @@ import { Todo } from 'src/models/todo.model';
 })
 export class AppComponent {
 
+  public mode = 'list';
   public todos: Todo[] = []; //Component Todo
   public title: String = 'My tasks';
   public form: FormGroup;
@@ -75,5 +76,9 @@ export class AppComponent {
     } else {
       this.todos = [];
     }
+  }
+
+  changeMode(mode: string) {
+    this.mode = mode
   }
 }
